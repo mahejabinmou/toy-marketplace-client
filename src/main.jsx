@@ -13,11 +13,13 @@ import AddAToy from './AddAToy/AddAToy';
 import Blogs from './Blogs/Blogs';
 import Login from './Login/Login';
 import SignUp from './SignUp/SignUp';
+import ErrorPage from './ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
         path:"/",
