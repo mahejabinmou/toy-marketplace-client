@@ -14,6 +14,9 @@ import Blogs from './Blogs/Blogs';
 import Login from './Login/Login';
 import SignUp from './SignUp/SignUp';
 import ErrorPage from './ErrorPage/ErrorPage';
+import AuthProvider from './provider/AuthProvider';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import SingleToyDetails from './SingleToyDetails/SingleToyDetails';
 
 const router = createBrowserRouter([
   {
@@ -35,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path:"/addtoy",
-        element:<AddAToy></AddAToy>
+        element:<PrivateRoute><AddAToy></AddAToy></PrivateRoute>
       },
       {
         path:"/blogs",
@@ -48,13 +51,23 @@ const router = createBrowserRouter([
       {
         path:"/signup",
         element:<SignUp></SignUp>
+      },
+      {
+        path:"/singletoydetails",
+        element:<PrivateRoute><SingleToyDetails></SingleToyDetails></PrivateRoute>
       }
     ]
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-     <RouterProvider router={router} />
+  <div className='max-w-7xl mx-auto p-8'>
+    <React.StrictMode>
+
+    <AuthProvider>
+    <RouterProvider router={router} />
+    </AuthProvider>
+
   </React.StrictMode>,
+  </div>
 )

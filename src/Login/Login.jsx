@@ -1,78 +1,61 @@
-import { FaGithub, FaGoogle } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
 
-// import React, { useState } from "react";
+import { useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
-import { Link } from "react-router-dom";
-
-// // import SocialLoginBtn from "../SocialLoginBtn/SocialLoginBtn";
-
-// import { useContext } from "react";
-// import { AuthContext } from "../provider/AuthProvider";
-// import { Link, useLocation, useNavigate } from "react-router-dom";
-// import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
-// import { app } from "../firebase/firebase.config";
 
 const Login = () => {
-    // const auth = getAuth(app);
-    // const googleProvider = new GoogleAuthProvider();
-    // const githubProvider = new GithubAuthProvider();
-
-    // const { loginUser } = useContext(AuthContext);
-    // const navigate = useNavigate();
-    // const location = useLocation();
-    // console.log("login page location", location);
-    // const from = location.state?.from?.pathname || "/";
 
 
-    // const [name, setName] = useState("");
-    // const [email, setEmail] = useState("");
-    // const [password, setPassword] = useState("");
-    // const [user, setUser] = useState(null);
-
-    // const handleLogin = (event) => {
-    //     event.preventDefault();
+    const { loginUser, googleSignIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log("login page location", location);
+    const from = location.state?.from?.pathname || "/";
 
 
 
-    //     if ((email, password)) {
-    //         loginUser(email, password)
-    //             .then((result) => {
-    //                 console.log(result.user);
-    //                 navigate(from, { replace: true });
-    //                  navigate("/");
-    //           })
-    //             .catch((error) => {
-    //                 console.log(error.message);
-    //             });
-    //     }
-    // };
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    
+
+    const handleLogin = (event) => {
+        event.preventDefault();
 
 
-    // const handleSignInGoogle=()=>{
-    //     signInWithPopup(auth, googleProvider)
-    //         .then(result => {
-    //             const user = result.user;
-    //             console.log(user);
-    //         })
-    //         .catch(error => {
 
-    //             console.log('error', error.message)
-    //         })
-    // }
+        if ((email, password)) {
+            loginUser(email, password)
+                .then((result) => {
+                    console.log(result.user);
+                    navigate(from, { replace: true });
+                    navigate("/");
+                })
+                .catch((error) => {
+                    console.log(error.message);
+                });
+        }
+    };
 
 
-    // const handleSignInGit=()=>{
-    //     signInWithPopup(auth, githubProvider)
-    //             .then(result => {
-    //                  const loggedUser = user.result;
-    //                 console.log(loggedUser);
-    //                 setUser(loggedUser);
-    //             })
+const handleSignInGoogle=()=>{
+    googleSignIn()
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error => {
 
-    //             .catch(error => {
-    //                 console.log(error);
-    //             })
-    // }
+            console.log('error', error.message)
+        })
+}
+    
+
+
+
+    
 
     // const handlSignOut = () => {
     //     signOut(auth)
@@ -100,7 +83,7 @@ const Login = () => {
                             <div>
                                 <input
 
-                                    // onChange={(e) => setEmail(e.target.value)}
+                                    onChange={(e) => setEmail(e.target.value)}
                                     className="email p-3 m-2 border "
                                     type="email"
                                     placeholder="enter your email"
@@ -108,39 +91,35 @@ const Login = () => {
                             </div>
                             <div>
                                 <input
-                                    // onChange={(e) => setPassword(e.target.value)}
+                                    onChange={(e) => setPassword(e.target.value)}
                                     className="password p-3 m-2  border "
                                     type="password"
                                     placeholder="enter your password"
                                 />
                             </div>
                             <button
-                                // onClick={handleLogin}
+                                onClick={handleLogin}
                                 className="btn btn-secondary   w-75 p-2 mt-3"
                             >
                                 Login
                             </button>
 
-                            <p className="p-2">
-                            < p className='my-4 text-center'>New to here <Link
-                            to="/signup" className='text-secondary font-bold'>
-                            Sign Up</Link></p>
-                            </p>
+                            <div className="p-2">
+                                < p className='my-4 text-center'>New to here <Link
+                                    to="/signup" className='text-secondary font-bold'>
+                                    Sign Up</Link></p>
+                            </div>
                         </form>
-                        
+
 
                         <div className="divider text-secondary">OR</div>
                         <div className="text-center">
                             <button
-                                // onClick={handleSignInGoogle} 
+                                onClick={handleSignInGoogle}
                                 className="btn btn-secondary btn-outline btn-circle w-[75px] mr-4 mt-3">
                                 <FaGoogle />
                             </button>
-                            <button
-                                // onClick={handleSignInGit}
-                                className="btn btn-secondary btn-outline btn-circle w-[75px]  mt-3">
-                                <FaGithub />
-                            </button>
+                            
 
                         </div>
 
