@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import useTitle from "../hooks/useTitle";
 
 
 const Login = () => {
@@ -14,6 +15,7 @@ const Login = () => {
     const location = useLocation();
     console.log("login page location", location);
     const from = location.state?.from?.pathname || "/";
+    useTitle('Login')
 
 
 

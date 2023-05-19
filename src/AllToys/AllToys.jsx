@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import ToyRow from "./ToyRow";
+import useTitle from "../hooks/useTitle";
 
 
 const AllToys = () => {
+    useTitle(AllToys)
     const [toys,setToys]=useState([]);
     
 
     useEffect(()=>{
-        fetch(`http://localhost:4000/alltoys`)
+        fetch(`http://localhost:5000/alltoys`)
         .then(res=>res.json())
         .then(data=>setToys(data))
     },[])
