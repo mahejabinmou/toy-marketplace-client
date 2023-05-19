@@ -16,10 +16,11 @@ const AddAToy = () => {
         const price = form.price.value;
         const Rating = form.rating.value;
         const description = form.detail.value;
-        const photo = form.photo.value;
+        const img = form.img.value;
         const sub_category=form.subCategory.value;
+        
 
-        const newToy = { toy_name, available_Quantity, seller_name, email, price, Rating, description, photo,sub_category }
+        const newToy = { toy_name, available_Quantity, seller_name, email, price, Rating, description,sub_category,img }
          console.log(newToy);
 
         // send data to server
@@ -151,7 +152,7 @@ const AddAToy = () => {
                         </label>
                         <label className="input-group">
 
-                            <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-full" />
+                            <input type="text" name="img" placeholder="Photo URL" className="input input-bordered w-full" />
                         </label>
 
                     </div>

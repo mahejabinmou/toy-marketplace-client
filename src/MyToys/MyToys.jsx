@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import useTitle from "../hooks/useTitle";
 import { AuthContext } from "../provider/AuthProvider";
-import MYToysRow from "./MYToysRow";
+import MyToysRow from "./MYToysRow";
+
 
 
 const MyToys = () => {
@@ -41,11 +42,12 @@ const MyToys = () => {
                     </thead>
                     <tbody>
                         {
-                            mytoys.map(mytoy => <MYToysRow
+                            mytoys.map(mytoy => <MyToysRow
                                 key={mytoy._id}
-                                toy={mytoy}>
+                                mytoy={mytoy}
+                                >
 
-                            </MYToysRow>)
+                            </MyToysRow>)
                         }
                     </tbody>
 
