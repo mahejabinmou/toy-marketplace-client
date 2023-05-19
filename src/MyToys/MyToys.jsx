@@ -42,28 +42,12 @@ const MyToys = () => {
     }
 
 
-    const handleBookingConfirm = id => {
-        fetch(`http://localhost:5000/toy/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({ status: 'confirm' })
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.modifiedCount > 0) {
-                    // update State
-                    const remaining = mytoys.filter(mytoy => mytoy._id !== id);
-                    const updated = mytoys.find(mytoy => mytoy._id === id);
-                    updated.status = 'confirm';
-                    const newToys = [updated, ...remaining];
-                    setMytoys(newToys);
-                }
+   
 
-            })
-    }
+
+
+            
+
 
     return (
 

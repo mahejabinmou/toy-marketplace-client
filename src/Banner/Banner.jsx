@@ -1,6 +1,8 @@
 import React from 'react';
 
+
 const Banner = () => {
+    
     return (
         <div className='mb-8 grid md:grid-cols-2 items-center  '>
             <img src="https://i.ibb.co/StrfhTg/banner1.jpg" className='rounded-xl w-[500px]' alt="" />

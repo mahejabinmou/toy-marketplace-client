@@ -27,11 +27,11 @@ const MyToysRow = ({ mytoy,handleDelete }) => {
             <td>${Rating}</td>
             <td>{available_Quantity}</td>
             <td>
-                     {/* <Link to="">
+                     <Link to={`/updateToy/${_id}`}>
                      <button  className="btn btn-ghost btn-xs bg-secondary">Update</button>
-                   </Link> */}
-                   <input type="submit" value="Update Coffee" className="btn btn-ghost btn-xs bg-secondary"/>
-           
+                   </Link>
+                   {/* <input type="submit" value="Update Coffee" className="btn btn-ghost btn-xs bg-secondary"/>
+            */}
             </td>
         </tr>
     );

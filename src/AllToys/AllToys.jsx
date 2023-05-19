@@ -5,18 +5,33 @@ import useTitle from "../hooks/useTitle";
 
 const AllToys = () => {
     useTitle(AllToys)
-    const [toys,setToys]=useState([]);
-    
+    const [toys, setToys] = useState([]);
+    const [searchText, setSearchText] = useState("");
 
-    useEffect(()=>{
+
+    useEffect(() => {
         fetch(`http://localhost:5000/alltoys`)
-        .then(res=>res.json())
-        .then(data=>setToys(data))
-    },[])
+            .then(res => res.json())
+            .then(data => setToys(data))
+    }, [])
+
+    const handleSearch = () => {
+        fetch(`http://localhost:5000/alltoys/${searchText}`)
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            setToys(data);
+          });
+      };
 
     return (
         <div>
             <h2 className="text-5xl">All toys: {toys.length}</h2>
+            <div className="form-control mx-auto grid md:grid-cols-2 gap-4  w-1/3">
+                <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="search by toy name"
+                    className="input input-bordered" />
+                <button onClick={handleSearch} className=" btn btn-secondary w-[90px] ">Search</button>
+            </div>
             <div className="overflow-x-auto w-full mt-8 mb-20">
                 <table className="table w-full">
                     {/* head */}
@@ -30,12 +45,12 @@ const AllToys = () => {
                         </tr>
                     </thead>
                     <tbody>
-                    {
-                   toys.map(toy=><ToyRow
-                    key={toy._id}
-                    toy={toy}
-                    ></ToyRow>)
-                }
+                        {
+                            toys.map(toy => <ToyRow
+                                key={toy._id}
+                                toy={toy}
+                            ></ToyRow>)
+                        }
                     </tbody>
 
                 </table>
