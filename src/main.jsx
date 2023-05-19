@@ -22,52 +22,54 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement:<ErrorPage></ErrorPage>,
-    children:[
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
       {
-        path:"/",
-        element:<Home></Home>
+        path: "/",
+        element: <Home></Home>
       },
       {
-        path:"/alltoys",
-        element:<AllToys></AllToys>
+        path: "/alltoys",
+        element: <AllToys></AllToys>
       },
       {
-        path:"/mytoys",
-        element:<MyToys></MyToys>
+        path: "/mytoys",
+        element: <MyToys></MyToys>
       },
       {
-        path:"/addtoy",
-        element:<PrivateRoute><AddAToy></AddAToy></PrivateRoute>
+        path: "/addtoy",
+        element: <PrivateRoute><AddAToy></AddAToy></PrivateRoute>
       },
       {
-        path:"/blogs",
-        element:<Blogs></Blogs>
+        path: "/blogs",
+        element: <Blogs></Blogs>
       },
       {
-        path:"/login",
-        element:<Login></Login>
+        path: "/login",
+        element: <Login></Login>
       },
       {
-        path:"/signup",
-        element:<SignUp></SignUp>
+        path: "/signup",
+        element: <SignUp></SignUp>
       },
       {
-        path:"/singletoydetails",
-        element:<PrivateRoute><SingleToyDetails></SingleToyDetails></PrivateRoute>
+        path: "/singletoydetails/:id",
+        element: <PrivateRoute><SingleToyDetails></SingleToyDetails></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:4000/alltoys/${params.id}`)
+
       }
     ]
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <div className='max-w-7xl mx-auto p-8'>
+  <div className='max-w-7xl mx-auto p-4'>
     <React.StrictMode>
 
-    <AuthProvider>
-    <RouterProvider router={router} />
-    </AuthProvider>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
 
-  </React.StrictMode>,
+    </React.StrictMode>,
   </div>
 )
