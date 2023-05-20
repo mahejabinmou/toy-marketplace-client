@@ -5,17 +5,19 @@ import Shop from './shop';
 
 const ShopCategory = () => {
     const [toys, setToys] = useState([]);
-  const [activeTab, setActiveTab] = useState('');
+  const [activeTab, setActiveTab] = useState('Disney princes');
   const [singleData,setSingleData]=useState([])
 
   useEffect(() => {
     fetch(`http://localhost:5000/all-products/${activeTab}`)
       .then((res) => res.json())
       .then((result) => {
-        // console.log(result);
+         console.log(result);
         setToys(result);
       });
   }, [activeTab]);
+
+  console.log(activeTab);
 
   
 
@@ -64,17 +66,29 @@ return (
         </TabPanel>
         <TabPanel>
         {
-            toys.map(toy=><p>{toy.sub_category}</p>)
+            toys.map(toy=><Shop
+            key={toy._id}
+            toy={toy}
+            
+            ></Shop>)
           }
         </TabPanel>
         <TabPanel>
         {
-            toys.map(toy=><p>{toy.sub_category}</p>)
+            toys.map(toy=><Shop
+            key={toy._id}
+            toy={toy}
+            
+            ></Shop>)
           }
         </TabPanel>
         <TabPanel>
         {
-            toys.map(toy=><p>{toy.sub_category}</p>)
+            toys.map(toy=><Shop
+            key={toy._id}
+            toy={toy}
+            
+            ></Shop>)
           }
         </TabPanel>
         
