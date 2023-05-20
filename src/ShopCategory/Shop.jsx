@@ -5,8 +5,8 @@ const Shop = ({ toy }) => {
     const { img, toy_name,
         price, Rating, } = toy;
     return (
-        
-        <div className="card card-compact  w-80 h-[450px] m-12 bg-base-100 shadow-xl">
+
+        <div className="card card-compact p-2 w-80 h-[450px] m-12 bg-base-100 shadow-xl">
             <figure><img src={img} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{toy_name}</h2>

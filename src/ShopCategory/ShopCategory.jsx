@@ -9,7 +9,7 @@ const ShopCategory = () => {
   const [singleData,setSingleData]=useState([])
 
   useEffect(() => {
-    fetch(`http://localhost:5000/all-products/${activeTab}`)
+    fetch(`https://assignment-11-server-side-blush.vercel.app/all-products/${activeTab}`)
       .then((res) => res.json())
       .then((result) => {
          console.log(result);
@@ -23,7 +23,7 @@ const ShopCategory = () => {
 
   const handleSingleData=id=>{
     console.log(id);
-    fetch(`http://localhost:5000/toy/${id}`)
+    fetch(`https://assignment-11-server-side-blush.vercel.app/toy/${id}`)
     .then((res) => res.json())
       .then((result) => {
         console.log(result);
