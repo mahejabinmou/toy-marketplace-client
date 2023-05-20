@@ -10,13 +10,13 @@ const AllToys = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/alltoys`)
+        fetch(`https://assignment-11-server-side-blush.vercel.app/alltoys`)
             .then(res => res.json())
             .then(data => setToys(data))
     }, [])
 
     const handleSearch = () => {
-        fetch(`http://localhost:5000/alltoys/${searchText}`)
+        fetch(`https://assignment-11-server-side-blush.vercel.app/alltoys/${searchText}`)
           .then((res) => res.json())
           .then((data) => {
             console.log(data);

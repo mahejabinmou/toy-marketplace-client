@@ -1,16 +1,18 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const UpdateToy = () => {
 
     const mytoy=useLoaderData();
     const { available_Quantity,price,description}=mytoy;
+    const {id} = useParams()
+    console.log(id);
 
-    const handleAddToy = event => {
+    const handleUpdateToy = event => {
         event.preventDefault();
         const form = event.target;
-        const available_Quantity = form.quantity.value;
+        const available_Quantity = form.available_Quantity.value;
         const price = form.price.value;
         const description = form.description.value;
 
@@ -18,7 +20,7 @@ const UpdateToy = () => {
          console.log(updatedToy);
 
         // send data to server
-        fetch(`http://localhost:5000/toy/${id}`,{
+        fetch(`https://assignment-11-server-side-blush.vercel.app/toy/${id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'
@@ -44,7 +46,7 @@ const UpdateToy = () => {
     return (
         <div className="bg-[#F4F3F0] p-24">
             <h1 className="text-3xl font-extrabold text-secondary">Update toy:{price}</h1>
-            <form onSubmit={handleAddToy}>
+            <form onSubmit={handleUpdateToy}>
                 {/* name and quantity row */}
                 <div className="md:flex">
 
@@ -88,9 +90,7 @@ const UpdateToy = () => {
                
 
                 <input type="submit" value="Update Toy" className="btn btn-block btn-secondary" />
-                {/* <Link >
-                <input type="submit" value="Add Toy" className="btn btn-block btn-secondary" />
-                   </Link> */}
+                
             </form>
         </div>
     );

@@ -12,7 +12,7 @@ const MyToys = () => {
 
     const { user } = useContext(AuthContext)
 
-    const url = `http://localhost:5000/toy?email=${user?.email}`
+    const url = `https://assignment-11-server-side-blush.vercel.app/toy?email=${user?.email}`
 
     useEffect(() => {
         fetch(url)
@@ -24,7 +24,7 @@ const MyToys = () => {
         const proceed = confirm('Are you u sure u want to delete');
         if (proceed) {
           
-            fetch(`http://localhost:5000/toy/${id}`,{
+            fetch(`https://assignment-11-server-side-blush.vercel.app/toy/${id}`,{
                 method: 'DELETE'
             })
             .then(res=>res.json())

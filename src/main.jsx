@@ -18,6 +18,7 @@ import AuthProvider from './provider/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import SingleToyDetails from './SingleToyDetails/SingleToyDetails';
 import UpdateToy from './MyToys/UpdateToy';
+import ShopCategory from './ShopCategory/ShopCategory';
 
 
 const router = createBrowserRouter([
@@ -46,11 +47,15 @@ const router = createBrowserRouter([
         path: "/updateToy/:id",
         element: <UpdateToy></UpdateToy>,
         loader:({params})=>
-        fetch(`http://localhost:5000/toy/${params.id}`)
+        fetch(`https://assignment-11-server-side-blush.vercel.app/toy/${params.id}`)
 },
       {
         path: "/blogs",
         element: <Blogs></Blogs>
+      },
+      {
+        path: "/shopCategory",
+        element: <ShopCategory></ShopCategory>
       },
       {
         path: "/login",
@@ -63,7 +68,7 @@ const router = createBrowserRouter([
       {
         path: "/singletoydetails/:id",
         element: <PrivateRoute><SingleToyDetails></SingleToyDetails></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/alltoys/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-11-server-side-blush.vercel.app/alltoys/${params.id}`)
 
       }
     ]

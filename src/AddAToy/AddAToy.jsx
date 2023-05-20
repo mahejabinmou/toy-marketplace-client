@@ -1,4 +1,5 @@
 
+import Swal from "sweetalert2";
 import useTitle from "../hooks/useTitle";
 
 
@@ -24,7 +25,7 @@ const AddAToy = () => {
          console.log(newToy);
 
         // send data to server
-        fetch('http://localhost:5000/toy',{
+        fetch('https://assignment-11-server-side-blush.vercel.app/toy',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
@@ -34,6 +35,14 @@ const AddAToy = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'User Added Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
         })
     }
 
@@ -159,9 +168,7 @@ const AddAToy = () => {
                 </div>
 
                 <input type="submit" value="Add Toy" className="btn btn-block btn-secondary" />
-                {/* <Link >
-                <input type="submit" value="Add Toy" className="btn btn-block btn-secondary" />
-                   </Link> */}
+                
             </form>
         </div>
     );
