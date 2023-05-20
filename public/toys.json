@@ -2,82 +2,83 @@
     {
         "toy_id": "01",
         "seller_name": "sakib",
-        "toy_name": "disney dolls",
+        "toy_name": "moana soft toy",
         "img": "https://i.ibb.co/tHmZfGy/moana-doll.jpg",
-        "price": "20.00",
+        "price": 20,
         "Rating": 4.5,
         "available_Quantity": "500",
         "sub_category":"Disney princes",
-        "description":"very good toy"
+        "description":"Disney Junior Mickey Mouse Countdown to Vacation, Officially Licensed Kids Toys for Ages 3 Up, Gifts and Presents"
 },
           
     {
         
         "service_id": "02",
-        "seller_name": "sakib",
-        "toy_name": "disney dolls",
+        "seller_name": "ayesha",
+        "toy_name": "chindrella",
         "img": "https://i.ibb.co/Qj5pbzC/cindre.jpg",
-        "price": "234",
-        "Rating": 4.5,
+        "price": 234,
+        "Rating": 7,
         "available_Quantity": "40",
         "sub_category": "disney princess",
-        "description":"very good toy"
+        "description":"Disney Junior Mickey Mouse Countdown to Vacation, Officially Licensed Kids Toys for Ages 3 Up, Gifts and Presents"
               
     },
     {
         
         "service_id": "03",
-        "seller_name": "sakib",
-        "toy_name": "disney dolls",
+        "seller_name": "hossain",
+        "toy_name": "elsa toy",
         "img": "https://i.ibb.co/Qj5pbzC/cindre.jpghttps://i.ibb.co/J2nf6RH/elsa.jpg",
-        "price": "560",
+        "price": 560,
         "Rating": 4.5,
         "available_Quantity": "15",
         "sub_category":"frozen dolls",
-        "description":"very good toy"
-    
-          
-    },
-    {
-        
-        "service_id": "04",
-        "seller_name": "sakib",
-        "toy_name": "disney dolls",
-        "img": "https://i.ibb.co/Qj5pbzC/cindre.jpghttps://i.ibb.co/J2nf6RH/elsa.jpg",
-        "price": "560",
-        "Rating": 4.5,
-        "available_Quantity": "15",
-        "sub_category":"frozen dolls",
-        "description":"very good toy"
+        "description":"Disney Junior Mickey Mouse Countdown to Vacation, Officially Licensed Kids Toys for Ages 3 Up, Gifts and Presents"
     
           
     },
     {
         
         "service_id": "05",
-        "seller_name": "sakib",
-        "toy_name": "disney dolls",
-        "img": "https://i.ibb.co/XDntNjr/mickys.jpg",
-        "price": "20.00",
+        "seller_name": "mou",
+        "toy_name": "enna soft toy",
+        "img": "https://i.ibb.co/qkkQW6S/disney-enna.jpg",
+        "price": 20,
         "Rating": 4.5,
         "available_Quantity": "500",
-        "sub_category":  "animation characters",
-        "description":"very good toy"
+        "sub_category":  "frozen dolls",
+        "description":"Disney Junior Mickey Mouse Countdown to Vacation, Officially Licensed Kids Toys for Ages 3 Up, Gifts and Presents"
         
             
     },
     {
         
-        "service_id": "06",
-        "seller_name": "sakib",
-        "toy_name": "disney dolls",
+        "service_id": "04",
+        "seller_name": "tanjim",
+        "toy_name": "demon killer toy",
         "img": "https://i.ibb.co/b7QBWHF/demon1.jpg",
-        "price": "20.00",
+        "price": 560,
+        "Rating": 4.5,
+        "available_Quantity": "15",
+        "sub_category":"animation characters",
+        "description":"Disney Junior Mickey Mouse Countdown to Vacation, Officially Licensed Kids Toys for Ages 3 Up, Gifts and Presents"
+    
+          
+    },
+    
+    
+    {"service_id": "06",
+        "seller_name": "sakib",
+        "toy_name": "cartton soft toy",
+        "img": "https://i.ibb.co/HXgSGDq/photo-1637858868799-7f26a0640eb6.jpg",
+        "price": 20.00,
         "Rating": 4.5,
         "available_Quantity": "500",
         "sub_category":  "animation characters",
-        "description":"very good toy"
+        "description":"Disney Junior Mickey Mouse Countdown to Vacation, Officially Licensed Kids Toys for Ages 3 Up, Gifts and Presents"
     }
+    
     
    
 

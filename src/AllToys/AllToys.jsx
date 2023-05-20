@@ -17,20 +17,22 @@ const AllToys = () => {
 
     const handleSearch = () => {
         fetch(`https://assignment-11-server-side-blush.vercel.app/alltoys/${searchText}`)
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            setToys(data);
-          });
-      };
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                setToys(data);
+            });
+    };
 
     return (
         <div>
-            <h2 className="text-5xl">All toys: {toys.length}</h2>
+            <h2 className="text-5xl text-center text-secondary mb-8">All toys</h2>
             <div className="form-control mx-auto grid md:grid-cols-2 gap-4  w-1/3">
                 <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="search by toy name"
                     className="input input-bordered" />
-                <button onClick={handleSearch} className=" btn btn-secondary w-[90px] ">Search</button>
+                <button 
+                onClick={handleSearch} 
+                className=" btn btn-secondary w-[90px] ">Search</button>
             </div>
             <div className="overflow-x-auto w-full mt-8 mb-20">
                 <table className="table w-full">

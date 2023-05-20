@@ -11,7 +11,7 @@ const Navbar = () => {
             .catch(error => console.log(error));
     }
 
-    console.log(user);
+    // console.log(user);
     return (
         <div className="navbar bg-base-100 h-28 text-secondary mb-4">
             <div className="navbar-start">
@@ -21,9 +21,9 @@ const Navbar = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to="/">Home</Link></li>
-                        <li ><Link to="/alltoys" className="justify-between"> All Toys</Link></li>
-                        <li><Link to="/mytoys">My Toys</Link></li>
-                        <li><Link to="/addtoy">Add A Toy</Link></li>
+                        <li ><Link to="/alltoys" className="justify-between">AllToys</Link></li>
+                        <li><Link to="/mytoys">MyToys</Link></li>
+                        <li><Link to="/addtoy">AddToy</Link></li>
                         <li><Link to="/blogs">Blogs</Link></li>
                         <li><Link to="/login">Login</Link></li>
                         <li><Link to="/signup">Signup</Link></li>
@@ -32,7 +32,7 @@ const Navbar = () => {
                 <img src="https://i.ibb.co/891fTVw/download.png" className="w-[100px] h-[100px] " alt="" />
                  
                 <Link to="/" className="btn btn-ghost normal-case text-xl">
-                      <p className="text-secondary normal-case text-xl">Kingdom Of Disney</p>
+                      <p className="text-secondary normal-case text-xl">ToyZone</p>
                 </Link>
             </div>
             
@@ -40,9 +40,9 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal px-1">
                     <li><Link to="/">Home</Link></li>
                     <li tabIndex={0}>
-                        <Link to="/alltoys">All Toys</Link></li>
-                    <li><Link to="/mytoys">My Toys</Link></li>
-                    <li><Link to="/addtoy">Add A Toy</Link></li>
+                        <Link to="/alltoys">AllToys</Link></li>
+                    <li><Link to="/mytoys">MyToys</Link></li>
+                    <li><Link to="/addtoy">AddAToy</Link></li>
                     <li><Link to="/blogs">Blogs</Link></li>
                     <li><Link to="/login">Login</Link></li>
                     <li><Link to="/signup">Signup</Link></li>

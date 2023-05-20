@@ -1,49 +1,90 @@
 import React, { useEffect, useState } from 'react';
-import AllToys from '../AllToys/AllToys';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import Shop from './shop';
 
 const ShopCategory = () => {
     const [toys, setToys] = useState([]);
-  const [activeTab, setActiveTab] = useState("Disney princes");
+  const [activeTab, setActiveTab] = useState('');
+  const [singleData,setSingleData]=useState([])
 
   useEffect(() => {
-    fetch(`https://assignment-11-server-side-blush.vercel.app/alltoys/${id}`)
+    fetch(`http://localhost:5000/all-products/${activeTab}`)
       .then((res) => res.json())
       .then((result) => {
+        // console.log(result);
         setToys(result);
       });
   }, [activeTab]);
 
+  
+
+  const handleSingleData=id=>{
+    console.log(id);
+    fetch(`http://localhost:5000/toy/${id}`)
+    .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        setSingleData(result);
+      });
+  } 
+
+  
+
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
+    console.log(tabName);
 }
-    return (
+
+    
+return (
 
         <Tabs>
         <TabList>
-          <Tab>Title 1</Tab>
-          <Tab>Title 2</Tab>
-          <Tab>Title 3</Tab>
+          <Tab onClick={()=>handleTabClick('Disney princes')}>Disney princes</Tab>
+          <Tab onClick={()=>handleTabClick('frozen dolls')}>frozen dolls</Tab>
+          <Tab onClick={()=>handleTabClick('animation characters')}>animation characters</Tab>
+          <Tab onClick={()=>handleTabClick('All')}>All</Tab>
+          
+
         </TabList>
     
         <TabPanel>
-          <h2>Any content 1</h2>
+          {/* {
+            toys.map(toy=><p>{toy.sub_category}</p>)
+          } */}
+
+          {
+            toys.map(toy=><Shop
+            key={toy._id}
+            toy={toy}
+            
+            ></Shop>)
+          }
         </TabPanel>
         <TabPanel>
-          <h2>Any content 2</h2>
+        {
+            toys.map(toy=><p>{toy.sub_category}</p>)
+          }
         </TabPanel>
         <TabPanel>
-          <h2>Any content 3</h2>
+        {
+            toys.map(toy=><p>{toy.sub_category}</p>)
+          }
+        </TabPanel>
+        <TabPanel>
+        {
+            toys.map(toy=><p>{toy.sub_category}</p>)
+          }
         </TabPanel>
         
       </Tabs>
         
     
   );
-};
 
-   
+
+        };
 
 
 export default ShopCategory;

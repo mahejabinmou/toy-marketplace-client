@@ -20,39 +20,36 @@ const MyToys = () => {
             .then(data => setMytoys(data))
     }, []);
 
-    const handleDelete = id =>{
+    const handleDelete = id => {
         const proceed = confirm('Are you u sure u want to delete');
         if (proceed) {
-          
-            fetch(`https://assignment-11-server-side-blush.vercel.app/toy/${id}`,{
+
+            fetch(`https://assignment-11-server-side-blush.vercel.app/toy/${id}`, {
                 method: 'DELETE'
             })
-            .then(res=>res.json())
-            .then(data=>{
-                console.log(data);
-                if (data.deletedCount > 0) {
-                    alert('deleted successful');
-                    const remaining = mytoys.filter(mytoy => mytoy._id !== id);
-                    setMytoys(remaining);
-                    
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        alert('deleted successful');
+                        const remaining = mytoys.filter(mytoy => mytoy._id !== id);
+                        setMytoys(remaining);
 
-                }
-            })
+
+                    }
+                })
         }
     }
-
-
-   
-
-
-
-            
 
 
     return (
 
         <div>
-            <h2>MyBooking: {mytoys.length}</h2>
+            <h2 className="text-3xl text-secondary text-center ">My Toys</h2>
+            <div className="btn-group btn-group-vertical lg:btn-group-horizontal">
+                <button className="btn btn-active ">Ascending</button>
+                <button className="btn  bg-secondary">Decending</button>
+            </div>
             <div className="overflow-x-auto w-full mt-8 mb-20">
                 <table className="table w-full">
                     {/* head */}
@@ -80,7 +77,7 @@ const MyToys = () => {
                                 key={mytoy._id}
                                 mytoy={mytoy}
                                 handleDelete={handleDelete}
-                                >
+                            >
 
                             </MyToysRow>)
                         }
