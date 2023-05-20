@@ -15,8 +15,9 @@ const Home = () => {
             <Banner></Banner>
             <Gallery></Gallery>
             <ShopCategory></ShopCategory>
-            <CarousalView></CarousalView>
             <BestSellToy></BestSellToy>
+            <CarousalView></CarousalView>
+            
         </div>
     );
 };

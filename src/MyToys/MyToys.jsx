@@ -18,7 +18,7 @@ const MyToys = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setMytoys(data))
-    }, []);
+    }, [user]);
 
     const handleDelete = id => {
         const proceed = confirm('Are you u sure u want to delete');

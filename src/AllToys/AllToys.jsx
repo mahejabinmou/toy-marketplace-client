@@ -28,11 +28,13 @@ const AllToys = () => {
         <div>
             <h2 className="text-5xl text-center text-secondary mb-8">All toys</h2>
             <div className="form-control mx-auto grid md:grid-cols-2 gap-4  w-1/3">
+
                 <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="search by toy name"
                     className="input input-bordered" />
                 <button 
                 onClick={handleSearch} 
                 className=" btn btn-secondary w-[90px] ">Search</button>
+
             </div>
             <div className="overflow-x-auto w-full mt-8 mb-20">
                 <table className="table w-full">
