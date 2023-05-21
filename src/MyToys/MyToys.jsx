@@ -42,6 +42,15 @@ const MyToys = () => {
     }
 
 
+    // useEffect(()=>{
+    //     fetch(`https://assignment-11-server-side-mahejabinmou.vercel.app/mytoys/${user?.email}`)
+    //     .then(res=>res.json())
+    //     .then(data=>{
+    //         setMytoys(data);
+    //     })
+    // },[user])
+
+
     return (
 
         <div>
@@ -69,6 +78,8 @@ const MyToys = () => {
                             <th className="text-secondary">price</th>
                             <th className="text-secondary">Rating</th>
                             <th className="text-secondary">available_Quantity</th>
+                            <th className="text-secondary">details</th>
+                        
                         </tr>
                     </thead>
                     <tbody>

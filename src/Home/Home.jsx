@@ -11,12 +11,12 @@ const Home = () => {
     useTitle('Home')
 
     return (
-        <div>
+        <div className="bg-green-100">
             <Banner></Banner>
             <Gallery></Gallery>
             <ShopCategory></ShopCategory>
-            <BestSellToy></BestSellToy>
             <CarousalView></CarousalView>
+            <BestSellToy></BestSellToy>
             
         </div>
     );

@@ -7,7 +7,7 @@ const BestSellToy = () => {
         AOS.init();
     }, [])
     return (
-        <div data-aos="fade-left" className='m-16   '>
+        <div data-aos="fade-left" className='m-16 pb-4  '>
             <div className='w-1/2 mx-auto space-y-7 '>
                 <img src="https://i.ibb.co/kM0MNmW/61-WTAb-Aavs-L-AC-SY879.jpg" 
                className='w-[2oopx] h-[300px]' alt="" />

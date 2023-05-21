@@ -2,7 +2,7 @@
 
 const Footer = () => {
     return (
-        <footer className="footer p-10  bg-secondary  text-white ">
+        <footer className="footer p-2  bg-green-200  text-secondary ">
   <div>
     <img src="https://i.ibb.co/891fTVw/download.png" className="w-[100px] h-[100px]" alt="" />
      <p>KingDom of Disney</p>

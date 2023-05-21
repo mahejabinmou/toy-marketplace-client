@@ -20,12 +20,13 @@ const MyToysRow = ({ mytoy,handleDelete }) => {
 
             <td>{service_id}</td>
             <td>{seller_name}</td>
-            <td>${email}</td>
+            <td>{email}</td>
             <td>{toy_name}</td>
             <td>{sub_category}</td>
             <td>${price}</td>
-            <td>${Rating}</td>
+            <td>{Rating}</td>
             <td>{available_Quantity}</td>
+            
             <td>
                      <Link to={`/updateToy/${_id}`}>
                      <button  className="btn btn-ghost btn-xs bg-secondary">Update</button>

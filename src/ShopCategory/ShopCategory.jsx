@@ -41,7 +41,9 @@ const ShopCategory = () => {
     
 return (
 
-        <Tabs>
+        <div>
+            <h2 className='text-secondary text-center text-3xl font-bold'>Shop by category</h2>
+            <Tabs>
         <TabList>
           <Tab onClick={()=>handleTabClick('Disney princes')}>Disney princes</Tab>
           <Tab onClick={()=>handleTabClick('frozen dolls')}>frozen dolls</Tab>
@@ -93,6 +95,7 @@ return (
         </TabPanel>
         
       </Tabs>
+        </div>
         
     
   );

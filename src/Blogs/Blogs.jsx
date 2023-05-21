@@ -10,7 +10,7 @@ const Blogs = () => {
       }, [])
     return (
         <div>
-            <div data-aos="fade-left" >
+            <div data-aos="fade-up" >
                 <h2 className="text-2xl font-bold pb-4">What is an access token and refresh token? How do they work and where should we store them on the client-side?</h2>
                 <span className="font-bold">Access Token:</span>
                 <p><small>An access token is a credential that is used to access protected resources on behalf of a user or an application. It is usually issued by an authentication server after a successful authentication process
