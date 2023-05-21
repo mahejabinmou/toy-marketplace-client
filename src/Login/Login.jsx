@@ -57,15 +57,6 @@ const handleSignInGoogle=()=>{
 
 
 
-    
-
-    // const handlSignOut = () => {
-    //     signOut(auth)
-    //         .then(result => setUser(null))
-    //         .catch(error => { console.log(error) })
-    // }
-
-
 
 
 

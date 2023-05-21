@@ -7,7 +7,7 @@ const AllToys = () => {
     useTitle('AllToys')
     const [toys, setToys] = useState([]);
     const [searchText, setSearchText] = useState("");
-
+    
 
     useEffect(() => {
         fetch(`https://assignment-11-server-side-blush.vercel.app/alltoys`)
@@ -31,9 +31,9 @@ const AllToys = () => {
 
                 <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="search by toy name"
                     className="input input-bordered" />
-                <button 
-                onClick={handleSearch} 
-                className=" btn btn-secondary w-[90px] ">Search</button>
+                <button
+                    onClick={handleSearch}
+                    className=" btn btn-secondary w-[90px] ">Search</button>
 
             </div>
             <div className="overflow-x-auto w-full  mt-8 mb-20">
