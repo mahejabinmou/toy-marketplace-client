@@ -9,16 +9,16 @@ const MyToys = () => {
     useTitle(MyToys)
 
     const [mytoys, setMytoys] = useState([])
-
     const { user } = useContext(AuthContext)
+    const [selected, setSelected] = useState("")
 
-    const url = `https://assignment-11-server-side-blush.vercel.app/toy?email=${user?.email}`
+    const url = `https://assignment-11-server-side-mahejabinmou.vercel.app/toy?email=${user?.email}&selected=${selected}`
 
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
             .then(data => setMytoys(data))
-    }, [user]);
+    }, [user,selected]);
 
     const handleDelete = id => {
         const proceed = confirm('Are you u sure u want to delete');
@@ -42,23 +42,19 @@ const MyToys = () => {
     }
 
 
-    // useEffect(()=>{
-    //     fetch(`https://assignment-11-server-side-mahejabinmou.vercel.app/mytoys/${user?.email}`)
-    //     .then(res=>res.json())
-    //     .then(data=>{
-    //         setMytoys(data);
-    //     })
-    // },[user])
+
 
 
     return (
 
         <div>
             <h2 className="text-3xl text-secondary text-center ">My Toys</h2>
-            <div className="btn-group btn-group-vertical lg:btn-group-horizontal">
-                <button className="btn btn-active ">Ascending</button>
-                <button className="btn  bg-secondary">Decending</button>
-            </div>
+
+            <select onChange={(e)=>setSelected(e.target.value)} className="select w-full  max-w-xs">
+                <option selected value="ascending" >Ascending</option>
+                <option value="descending">Descending</option>
+            </select>
+
             <div className="overflow-x-auto w-full mt-8 mb-20">
                 <table className="table w-full">
                     {/* head */}
@@ -79,7 +75,7 @@ const MyToys = () => {
                             <th className="text-secondary">Rating</th>
                             <th className="text-secondary">available_Quantity</th>
                             <th className="text-secondary">details</th>
-                        
+
                         </tr>
                     </thead>
                     <tbody>

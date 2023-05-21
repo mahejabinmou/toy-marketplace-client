@@ -21,7 +21,7 @@ const AddAToy = () => {
         const sub_category=form.subCategory.value;
         
 
-        const newToy = { toy_name, available_Quantity, seller_name, email, price, Rating, description,sub_category,img }
+        const newToy = { toy_name, available_Quantity, seller_name, email,price:parseInt(price), Rating, description,sub_category,img }
          console.log(newToy);
 
         // send data to server
