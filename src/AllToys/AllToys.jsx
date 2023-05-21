@@ -4,7 +4,7 @@ import useTitle from "../hooks/useTitle";
 
 
 const AllToys = () => {
-    useTitle(AllToys)
+    useTitle('AllToys')
     const [toys, setToys] = useState([]);
     const [searchText, setSearchText] = useState("");
 

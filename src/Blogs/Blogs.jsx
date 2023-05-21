@@ -4,7 +4,7 @@ import 'aos/dist/aos.css';
 import { useEffect } from "react";
 
 const Blogs = () => {
-    useTitle(Blogs)
+    useTitle('Blogs')
     useEffect(() => {
         AOS.init();
       }, [])

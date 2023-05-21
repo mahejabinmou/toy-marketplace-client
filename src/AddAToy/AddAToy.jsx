@@ -5,7 +5,7 @@ import useTitle from "../hooks/useTitle";
 
 
 const AddAToy = () => {
-    useTitle(AddAToy)
+    useTitle('AddAToy')
 
     const handleAddToy = event => {
         event.preventDefault();

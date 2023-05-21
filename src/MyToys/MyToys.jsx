@@ -6,7 +6,7 @@ import MyToysRow from "./MYToysRow";
 
 
 const MyToys = () => {
-    useTitle(MyToys)
+    useTitle('MyToys')
 
     const [mytoys, setMytoys] = useState([])
     const { user } = useContext(AuthContext)
