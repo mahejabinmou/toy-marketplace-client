@@ -37,15 +37,15 @@ const Navbar = () => {
             </div>
             
             <div className="navbar-center hidden text-secondary lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal px-1">n
                     <li><Link to="/">Home</Link></li>
                     <li tabIndex={0}>
-                        <Link to="/alltoys">AllToys</Link></li>
-                    <li><Link to="/mytoys">MyToys</Link></li>
-                    <li><Link to="/addtoy">AddAToy</Link></li>
-                    <li><Link to="/blogs">Blogs</Link></li>
-                    <li><Link to="/login">Login</Link></li>
-                    <li><Link to="/signup">Signup</Link></li>
+                    <Link to="/alltoys" className="justify-between">AllToys</Link></li>
+                        <li><Link to="/mytoys">MyToys</Link></li>
+                        <li><Link to="/addtoy">AddToy</Link></li>
+                        <li><Link to="/blogs">Blogs</Link></li>
+                        <li><Link to="/login">Login</Link></li>
+                        <li><Link to="/signup">Signup</Link></li>
                     {
                         user?.email? 
                         <>
